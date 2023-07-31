@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #0E4749, #002626);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.matheus.controlecaminhao.controller.RegisterExpenseController">
+   <left>
+      <VBox alignment="CENTER_LEFT" layoutX="900.0" layoutY="-900.0" prefHeight="800.0" prefWidth="207.0" snapToPixel="false" style="-fx-background-color: #EFE7DA; -fx-background-radius: 0 80px 0 0;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="76.0" fitWidth="149.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/pngfind.com-truck-png-1822011.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="50.0" left="20.0" top="40.0" />
+               </VBox.margin>
+            </ImageView>
+            <AnchorPane prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Region id="button" layoutY="49.0" onMouseClicked="#SendToDashboard" prefHeight="50.0" prefWidth="207.0" style="-fx-background-color: #0E4749;" stylesheets="@style/style.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Region>
+                  <Text fill="WHITE" layoutX="41.0" layoutY="81.0" onMouseClicked="#SendToDashboard" strokeType="OUTSIDE" strokeWidth="0.0" text="Painel Principal">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="100.0" prefWidth="207.0">
+               <children>
+                  <Region id="button" layoutY="25.0" onMouseClicked="#SendToDashboard" prefHeight="50.0" prefWidth="207.0" style="-fx-background-color: #0E4749;" stylesheets="@style/style.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Region>
+                  <Text fill="WHITE" layoutX="58.0" layoutY="56.0" onMouseClicked="#SendToDashboard" strokeType="OUTSIDE" strokeWidth="0.0" text="Caminhões">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Region id="button" layoutY="14.0" onMouseClicked="#SendToDashboard" prefHeight="50.0" prefWidth="207.0" style="-fx-background-color: #FFFFFF;" stylesheets="@style/style.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Region>
+                  <Region id="button" layoutY="7.0" onMouseClicked="#SendToDashboard" prefHeight="50.0" prefWidth="207.0" style="-fx-background-color: #0E4749;" stylesheets="@style/style.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Region>
+                  <Text fill="WHITE" layoutX="63.0" layoutY="38.0" onMouseClicked="#SendToDashboard" strokeType="OUTSIDE" strokeWidth="0.0" text="Despesas" textAlignment="CENTER">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Region id="button" onMouseClicked="#RegisterTruck" prefHeight="50.0" prefWidth="207.0" style="-fx-background-color: #0E4749;" stylesheets="@style/style.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Region>
+                  <Text fill="WHITE" layoutX="24.0" layoutY="31.0" onMouseClicked="#RegisterTruck" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar Despesas">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <Region id="button" layoutY="-21.0" onMouseClicked="#SendToDashboard" prefHeight="50.0" prefWidth="207.0" style="-fx-background-color: #0E4749;" stylesheets="@style/style.css">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Region>
+                  <Text fill="WHITE" layoutX="23.0" layoutY="10.0" onMouseClicked="#SendToDashboard" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar Caminhão">
+                     <font>
+                        <Font name="Arial" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Text>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="791.0" prefWidth="1366.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="458.0" layoutY="239.0" prefHeight="322.0" prefWidth="450.0" style="-fx-background-color: #002626; -fx-background-radius: 10px;">
+               <children>
+                  <TextField layoutX="181.0" layoutY="102.0" />
+                  <Text fill="WHITE" layoutX="58.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Valor" />
+                  <TextField layoutX="181.0" layoutY="141.0" />
+                  <Text fill="WHITE" layoutX="55.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" wrappingWidth="33.0" />
+                  <TextField layoutX="181.0" layoutY="181.0" />
+                  <Text fill="WHITE" layoutX="58.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data" />
+                  <Button layoutX="304.0" layoutY="249.0" mnemonicParsing="false" text="Registrar" />
+                  <Button layoutX="46.0" layoutY="249.0" mnemonicParsing="false" text="Apagar tudo" />
+               </children>
+            </Pane>
+            <Text fill="WHITE" layoutX="458.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registro das despesas">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
