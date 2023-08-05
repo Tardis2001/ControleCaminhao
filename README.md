@@ -18,13 +18,14 @@ Um sistema para controle de frotas de caminhões que demonstra a despesas mensai
 ### Em desevolvimento e o que planejo fazer
 
 --- 
-- [ ] Fazer tela de adicionar despesas
+- [x] Fazer tela de adicionar despesas
 - [x] Fazer tela de adicionar caminhões
 - [x] Fazer tela de dashboard
-- [ ] Fazer a tela de listar caminhões
-- [ ] Fazer a tela de listar despesas dos caminhões
-- [ ] Armazenar o caminhão no banco de dados
+- [x] Fazer a tela de listar caminhões
+- [x] Fazer a tela de listar despesas dos caminhões
+- [x] Armazenar o caminhão no banco de dados(Tem bugs)
 - [ ] Armazenar as despesas do caminhão
+- [ ] Mostrar despesas semanais,mensais e total
 - [ ] fazer um grafico para despesas semanais e mensais
 
 ---

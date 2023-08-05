@@ -1,121 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.chart.BarChart?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.effect.DropShadow?>
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1366.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #3167bd, #ccd3de);" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Region layoutX="-2.0" layoutY="5.0" onMouseClicked="#SendToDashBoard" prefHeight="770.0" prefWidth="201.0" style="-fx-background-color: #ccd3de;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1167.0" AnchorPane.topAnchor="0.0">
-         <cursor>
-            <Cursor fx:constant="DEFAULT" />
-         </cursor>
-      </Region>
-      <Text fill="WHITE" layoutX="632.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Painel Principal" wrappingWidth="280.5559844970703" AnchorPane.bottomAnchor="712.21875" AnchorPane.leftAnchor="631.5559844970703" AnchorPane.rightAnchor="453.4440155029297" AnchorPane.topAnchor="19.78125">
-         <font>
-            <Font name="Arial" size="32.0" />
-         </font>
-      </Text>
-      <Region id="button" layoutX="-8.0" layoutY="196.0" onMouseClicked="#SendToDashBoard" prefHeight="50.0" prefWidth="207.0" style="-fx-background-color: #FFFFFF;" stylesheets="@style/style.css">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Region>
-      <Text layoutX="40.0" layoutY="227.0" onMouseClicked="#SendToDashboard" strokeType="OUTSIDE" strokeWidth="0.0" text="Painel Principal">
-         <font>
-            <Font name="Arial" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Text>
-      <Region layoutX="-10.0" layoutY="273.0" onMouseClicked="#ListTrucks" prefHeight="50.0" prefWidth="209.0" style="-fx-background-color: #FFFFFF;">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Region>
-      <Text layoutX="53.0" layoutY="306.0" onMouseClicked="#ListTrucks" strokeType="OUTSIDE" strokeWidth="0.0" text="Caminhões">
-         <font>
-            <Font name="Arial" size="18.0" />
-         </font>
-      </Text>
-      <Region layoutX="-2.0" layoutY="355.0" onMouseClicked="#ListExpenses" prefHeight="50.0" prefWidth="201.0" style="-fx-background-color: #FFFFFF;">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Region>
-      <Text layoutX="58.0" layoutY="387.0" onMouseClicked="#ListExpenses" strokeType="OUTSIDE" strokeWidth="0.0" text="Despesas">
-         <font>
-            <Font name="Arial" size="18.0" />
-         </font>
-      </Text>
-      <Region layoutX="-3.0" layoutY="432.0" onMouseClicked="#RegisterTruck" prefHeight="50.0" prefWidth="202.0" style="-fx-background-color: #FFFFFF;">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Region>
-      <Text layoutX="15.0" layoutY="464.0" onMouseClicked="#RegisterTruck" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar Caminhão">
-         <font>
-            <Font name="Arial" size="18.0" />
-         </font>
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Text>
-      <Text fill="WHITE" layoutX="243.0" layoutY="147.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gastos na Semana">
-         <font>
-            <Font name="Arial" size="14.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="76.0" fitWidth="149.0" layoutX="28.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@image/truck.png" />
-         </image>
-      </ImageView>
-      <Region id="button" layoutX="-8.0" layoutY="507.0" onMouseClicked="#RegisterExpenses" prefHeight="50.0" prefWidth="207.0" style="-fx-background-color: #FFFFFF;" stylesheets="@style/style.css">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Region>
-      <Text layoutX="15.0" layoutY="539.0" onMouseClicked="#RegisterExpenses" strokeType="OUTSIDE" strokeWidth="0.0" text="Registrar Despesas">
-         <font>
-            <Font name="Arial" size="18.0" />
-         </font>
-      </Text>
-      <BarChart layoutX="199.0" layoutY="151.0" maxHeight="570.0" minHeight="222.0" prefHeight="570.0" prefWidth="589.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="199.0" AnchorPane.rightAnchor="578.0" AnchorPane.topAnchor="151.0">
-         <xAxis>
-            <CategoryAxis side="BOTTOM" />
-         </xAxis>
-         <yAxis>
-            <NumberAxis side="LEFT" tickLabelFill="#f5f5f5">
-               <tickLabelFont>
-                  <Font size="10.0" />
-               </tickLabelFont>
-            </NumberAxis>
-         </yAxis>
-         <effect>
-            <DropShadow blurType="GAUSSIAN" height="23.93" radius="18.7925" width="53.24" />
-         </effect>
-      </BarChart>
-      <TableView layoutX="799.0" layoutY="167.0" prefHeight="527.0" prefWidth="543.0" stylesheets="@style/style.css">
-         <columns>
-            <TableColumn prefWidth="113.0" text="Modelo" />
-            <TableColumn editable="false" prefWidth="167.0" sortable="false" text="Numero" />
-            <TableColumn editable="false" prefWidth="257.0" sortable="false" text="Despesa Total" />
-         </columns>
-         <effect>
-            <DropShadow height="55.69" radius="23.07" width="38.59" />
-         </effect>
-      </TableView>
-   </children>
-</AnchorPane>
+
+<BorderPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@style/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.matheus.controlecaminhao.controller.DashboardController">
+   <top>
+      <Pane prefHeight="83.0" prefWidth="600.0" style="-fx-background-color: #62ADD9;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="600.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Painel Principal">
+               <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+            </Text>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+   </top>
+   <left>
+      <VBox alignment="TOP_CENTER" maxWidth="196.0" minWidth="161.0" prefHeight="685.0" prefWidth="196.0" spacing="20.0" style="-fx-background-color: #62ADD9;" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="63.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/pngfind.com-truck-png-1822011.png" />
+               </image>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </ImageView>
+            <MFXButton fx:id="dashboard" onMouseReleased="#sendtoDashboard" prefHeight="40.0" prefWidth="208.0" style="-fx-background-radius: 0;" text="Painel" />
+            <MFXButton fx:id="listTrucks" onMouseReleased="#ListTrucks" prefHeight="40.0" prefWidth="246.0" style="-fx-background-radius: 0;" text="Caminhão" />
+            <MFXButton onMouseReleased="#RegisterTruck" prefHeight="40.0" prefWidth="326.0" style="-fx-background-radius: 0;" text="Registrar Caminhão" />
+            <MFXButton onMouseReleased="#RegisterExpenses" prefHeight="40.0" prefWidth="327.0" style="-fx-background-radius: 0;" text="Registrar Despesa" />
+         </children>
+         <padding>
+            <Insets top="100.0" />
+         </padding>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;truckbackground.jpg&quot;);" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
