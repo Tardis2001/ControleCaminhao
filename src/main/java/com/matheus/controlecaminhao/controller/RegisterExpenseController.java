@@ -68,6 +68,7 @@ public class RegisterExpenseController implements Initializable {
     }
     @FXML
     void RegisterExpenses(MouseEvent event) {
+        expensedao.adicionarExpense(new Expenses(Float.parseFloat(amountfield.getText()),datefield.getValue().toString(),namefield.getText(),Integer.parseInt(caminhaofield.getText())));
 
     }
 
@@ -78,7 +79,6 @@ public class RegisterExpenseController implements Initializable {
 
     @FXML
     void register(ActionEvent event) {
-        expensedao.adicionarExpense(new Expenses(Float.parseFloat(amountfield.getText()),datefield.getValue().toString(),namefield.getText(),Integer.parseInt(caminhaofield.getText())));
     }
 
     @Override

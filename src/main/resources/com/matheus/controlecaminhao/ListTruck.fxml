@@ -3,58 +3,28 @@
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
 <?import io.github.palexdev.materialfx.controls.MFXTextField?>
 <?import io.github.palexdev.materialfx.controls.legacy.MFXLegacyTableView?>
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <BorderPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@style/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.matheus.controlecaminhao.controller.ListController">
    <top>
-      <Pane prefHeight="83.0" prefWidth="600.0" style="-fx-background-color: #1f1e1e;" BorderPane.alignment="CENTER">
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
          <children>
-            <Text fill="WHITE" layoutX="600.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Painel Principal">
-               <font>
-                  <Font name="Arial" size="24.0" />
-               </font>
-            </Text>
+            <MFXButton buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#sendtoDashboard" prefHeight="40.0" prefWidth="200.0" text="Painel" />
+            <MFXButton fx:id="listTrucks" buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#ListTrucks" prefHeight="40.0" prefWidth="200.0" text="Caminhão" />
+            <MFXButton buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#RegisterTruck" prefHeight="40.0" prefWidth="200.0" text="Registrar Caminhão" />
+            <MFXButton buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#RegisterExpenses" prefHeight="40.0" prefWidth="200.0" text="Registrar Despesa" />
          </children>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-      </Pane>
+      </HBox>
    </top>
-   <left>
-      <VBox alignment="TOP_CENTER" maxWidth="196.0" minWidth="161.0" prefHeight="685.0" prefWidth="196.0" spacing="20.0" style="-fx-background-color: #62ADD9;" BorderPane.alignment="CENTER">
-         <children>
-            <ImageView fitHeight="63.0" fitWidth="124.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@image/pngfind.com-truck-png-1822011.png" />
-               </image>
-               <VBox.margin>
-                  <Insets bottom="20.0" />
-               </VBox.margin>
-            </ImageView>
-            <MFXButton onMouseReleased="#sendtoDashboard" prefHeight="40.0" prefWidth="208.0" style="-fx-background-radius: 0;" text="Painel" />
-            <MFXButton fx:id="listTrucks" onMouseReleased="#ListTrucks" prefHeight="40.0" prefWidth="246.0" style="-fx-background-radius: 0;" text="Caminhão" />
-            <MFXButton onMouseReleased="#RegisterTruck" prefHeight="40.0" prefWidth="326.0" style="-fx-background-radius: 0;" text="Registrar Caminhão" />
-            <MFXButton onMouseReleased="#RegisterExpenses" prefHeight="40.0" prefWidth="327.0" style="-fx-background-radius: 0;" text="Registrar Despesa" />
-         </children>
-         <padding>
-            <Insets top="100.0" />
-         </padding>
-      </VBox>
-   </left>
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;truckbackground.jpg&quot;);" BorderPane.alignment="CENTER">
          <children>
-            <MFXLegacyTableView fx:id="tablecaminhoes" layoutX="64.0" layoutY="57.0" prefHeight="545.0" prefWidth="493.0">
+            <MFXLegacyTableView fx:id="tablecaminhoes" layoutX="115.0" layoutY="39.0" prefHeight="545.0" prefWidth="493.0">
                <columns>
                   <TableColumn fx:id="tableidcaminhao" prefWidth="51.0" text="ID" />
                   <TableColumn fx:id="tablemodelo" prefWidth="99.0" text="Modelo" />
@@ -64,13 +34,13 @@
                   <TableColumn fx:id="tablekm" prefWidth="58.0" text="Km" />
                </columns>
             </MFXLegacyTableView>
-            <Label layoutX="64.0" layoutY="15.0" text="Caminhões" textFill="WHITE">
+            <Label layoutX="115.0" layoutY="-11.0" text="Caminhões" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <MFXTextField fx:id="searchdespesas" floatMode="ABOVE" layoutX="629.0" layoutY="14.0" prefHeight="29.0" prefWidth="523.0" promptText="Digite o ID aqui para filtrar" />
-            <MFXLegacyTableView fx:id="tabledespesas" layoutX="629.0" layoutY="57.0" prefHeight="548.0" prefWidth="523.0">
+            <MFXTextField fx:id="searchdespesas" floatMode="ABOVE" layoutX="711.0" layoutY="-11.0" prefHeight="29.0" prefWidth="523.0" promptText="Digite o ID aqui para filtrar" />
+            <MFXLegacyTableView fx:id="tabledespesas" layoutX="711.0" layoutY="38.0" prefHeight="548.0" prefWidth="523.0">
                <columns>
                   <TableColumn fx:id="tableid" prefWidth="52.0" text="Id" />
                   <TableColumn fx:id="tableidCaminhao" prefWidth="89.0" text="ID Caminhão" />
@@ -79,25 +49,25 @@
                   <TableColumn fx:id="tabledata" prefWidth="100.0" text="Data" />
                </columns>
             </MFXLegacyTableView>
-            <Label layoutX="929.0" layoutY="631.0" prefHeight="40.0" style="-fx-background-color: #1f1e1e; -fx-padding: 5px;" text="Despesa Total:" textFill="WHITE" />
-            <Label fx:id="total" layoutX="1016.0" layoutY="631.0" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: #1f1e1e;" text="0.0" textFill="WHITE">
+            <Label layoutX="648.0" layoutY="617.0" prefHeight="40.0" style="-fx-background-color: #1f1e1e; -fx-padding: 5px;" text="Diferença:" textFill="WHITE" />
+            <Label fx:id="total" layoutX="711.0" layoutY="617.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #1f1e1e;" text="0.0" textAlignment="RIGHT" textFill="WHITE">
                <font>
-                  <Font size="24.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="557.0" layoutY="631.0" prefHeight="40.0" style="-fx-background-color: #1f1e1e; -fx-padding: 5px;" text="Despesa Total da Semana:" textFill="WHITE" />
-            <Label fx:id="despesaSemana" layoutX="706.0" layoutY="631.0" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: #1f1e1e;" text="0.0" textFill="WHITE">
+            <Label layoutX="361.0" layoutY="617.0" prefHeight="40.0" style="-fx-background-color: #1f1e1e; -fx-padding: 5px;" text="Despesa Total da Semana:" textFill="WHITE" />
+            <Label fx:id="despesaSemana" layoutX="510.0" layoutY="617.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #1f1e1e;" text="0.0" textFill="WHITE">
                <font>
-                  <Font size="24.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="753.0" layoutY="631.0" prefHeight="40.0" style="-fx-background-color: #1f1e1e; -fx-padding: 5px;" text="Despesa Total do Mês:" textFill="WHITE" />
-            <Label fx:id="despesaMes" layoutX="883.0" layoutY="631.0" prefHeight="40.0" prefWidth="36.0" style="-fx-background-color: #1f1e1e;" text="0.0" textFill="WHITE">
+            <Label layoutX="114.0" layoutY="617.0" prefHeight="40.0" style="-fx-background-color: #1f1e1e; -fx-padding: 5px;" text="Despesa Total do Mês:" textFill="WHITE" />
+            <Label fx:id="despesaMes" layoutX="244.0" layoutY="617.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #1f1e1e;" text="0.0" textFill="WHITE">
                <font>
-                  <Font size="24.0" />
+                  <Font name="System Bold" size="18.0" />
                </font>
             </Label>
-            <MFXButton layoutX="1078.0" layoutY="631.0" onMouseClicked="#searchexpense" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: #1f1e1e;" text="Pesquisar" textFill="WHITE" />
+            <MFXButton layoutX="1164.0" layoutY="617.0" onMouseClicked="#searchexpense" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: #1f1e1e;" text="Pesquisar" textFill="WHITE" />
          </children></AnchorPane>
    </center>
 </BorderPane>

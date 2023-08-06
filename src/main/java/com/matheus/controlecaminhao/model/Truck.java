@@ -28,6 +28,20 @@ public class Truck {
         this.motorista = motorista;
         this.placa = placa;
     }
+
+    @Override
+    public String toString() {
+        return "Truck{" +
+                "id=" + id +
+                ", marca='" + marca + '\'' +
+                ", modelo='" + modelo + '\'' +
+                ", ano=" + ano +
+                ", km=" + km +
+                ", motorista='" + motorista + '\'' +
+                ", placa='" + placa + '\'' +
+                '}';
+    }
+
     public int getKm() {
         return km;
     }

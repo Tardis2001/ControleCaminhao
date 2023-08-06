@@ -13,8 +13,8 @@ public class Main extends Application{
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dashboard.fxml"));
 
         Scene scene = new Scene(fxmlLoader.load());
-        scene.getStylesheets().add("style/style.css");
-        stage.setTitle("Hello!");
+//        scene.getStylesheets().add("style/style.css");
+        stage.setTitle("Controle de Caminhões");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();

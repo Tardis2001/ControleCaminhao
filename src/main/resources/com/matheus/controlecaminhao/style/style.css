@@ -12,7 +12,7 @@
     -fx-background-color: transparent;
 }
 #pane{
-    -fx-background-image: url("../truckbackground.jpg");
+    -fx-background-image: url("../truckbackground2.jpg");
     -fx-background-repeat: stretch;   
     -fx-background-size: 1366 768;
     -fx-background-position: center center;

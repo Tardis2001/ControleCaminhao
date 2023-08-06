@@ -21,6 +21,7 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Map;
 import java.util.ResourceBundle;
 
 import com.matheus.controlecaminhao.dao.truckdao;
@@ -36,9 +37,6 @@ public class ListController implements Initializable {
     private Label despesaMes;
 
     @FXML
-    private Label despesaSemana;
-
-    @FXML
     private MFXButton listTrucks;
 
     @FXML
@@ -48,7 +46,7 @@ public class ListController implements Initializable {
     private TableColumn<Truck, Integer> tableano;
 
     @FXML
-    private TableColumn<Truck, Integer> tableidCaminhao;
+    private TableColumn<Expenses, Integer> tableidCaminhao;
 
     @FXML
     private MFXLegacyTableView<Truck> tablecaminhoes;
@@ -75,17 +73,18 @@ public class ListController implements Initializable {
     private TableColumn<Truck, String> tablemotorista;
 
     @FXML
-    private TableColumn<Truck, String> tablenome;
+    private TableColumn<Expenses, String> tablenome;
 
     @FXML
     private TableColumn<Truck, String> tableplaca;
 
     @FXML
-    private TableColumn<Truck, Integer> tablevalor;
+    private TableColumn<Expenses, Integer> tablevalor;
 
     @FXML
     private Label total;
-
+    @FXML
+    private Label despesaSemana;
     private expensedao expensedao;
     private truckdao truckdao;
     private ObservableList<Expenses> expensesList = FXCollections.observableArrayList();
@@ -137,9 +136,21 @@ public class ListController implements Initializable {
 
     @FXML
     void searchexpense(){
-        expensesList.addAll(expensedao.getExpensesForTruck(Integer.parseInt(searchdespesas.getText())));
-        tabledespesas.setItems(expensesList);
+        if(searchdespesas.getText().equals("")) {
+            refreshTable();
 
+
+            total.setText(String.valueOf(expensedao.getTotalGastos()));
+        }else {
+            expensesList.clear();
+            expensesList.addAll(expensedao.getExpensesForTruck(Integer.parseInt(searchdespesas.getText())));
+            tabledespesas.setItems(expensesList);
+            despesaMes.setText(String.valueOf(expensedao.getTotalGastosMesAtual(Integer.parseInt(searchdespesas.getText()))));
+
+            despesaSemana.setText(String.valueOf(expensedao.getExpensesForWeekTruck(Integer.parseInt(searchdespesas.getText()))));
+
+            total.setText(String.valueOf(expensedao.getTotalGastosfromTruck(Integer.parseInt(searchdespesas.getText()))));
+        }
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -153,15 +164,26 @@ public class ListController implements Initializable {
         tablemodelo.setCellValueFactory(new PropertyValueFactory<Truck,String>("modelo"));
         tablemotorista.setCellValueFactory(new PropertyValueFactory<Truck,String>("motorista"));
         tableplaca.setCellValueFactory(new PropertyValueFactory<Truck,String>("placa"));
-        tablevalor.setCellValueFactory(new PropertyValueFactory<Truck,Integer>("amount"));
+        tablevalor.setCellValueFactory(new PropertyValueFactory<Expenses,Integer>("amount"));
         tableid.setCellValueFactory(new PropertyValueFactory<Expenses,Integer>("id"));
-        tableidCaminhao.setCellValueFactory(new PropertyValueFactory<Truck,Integer>("id"));
+        tablenome.setCellValueFactory(new PropertyValueFactory<Expenses,String>("Name"));
+        tableidCaminhao.setCellValueFactory(new PropertyValueFactory<Expenses,Integer>("idTruck"));
         tableidcaminhao.setCellValueFactory(new PropertyValueFactory<Truck,Integer>("id"));
+
+//        tablecaminhoes.getColumns().addAll(tableano,tableidcaminhao,tablekm,tablemodelo,tablemodelo,tableplaca);
         refreshTable();
+
+
     }
     public void refreshTable(){
         trucklist.clear();
         trucklist.addAll(truckdao.getTruck());
         tablecaminhoes.setItems(trucklist);
+
+        expensesList.clear();
+        expensesList.addAll(expensedao.getAllExpenses());
+        tabledespesas.setItems(expensesList);
+        total.setText(String.valueOf(expensedao.getTotalGastos()));
+
     }
 }
