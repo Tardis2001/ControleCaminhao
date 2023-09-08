@@ -5,20 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="791ed69a-44d4-4309-8a96-a357585373a8" name="Changes" comment="save">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frota.db" beforeDir="false" afterPath="$PROJECT_DIR$/frota.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/matheus/controlecaminhao/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matheus/controlecaminhao/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/matheus/controlecaminhao/controller/ListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matheus/controlecaminhao/controller/ListController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/matheus/controlecaminhao/controller/RegisterExpenseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matheus/controlecaminhao/controller/RegisterExpenseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/matheus/controlecaminhao/dao/expensedao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matheus/controlecaminhao/dao/expensedao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/matheus/controlecaminhao/dao/truckdao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matheus/controlecaminhao/dao/truckdao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/matheus/controlecaminhao/model/Truck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/matheus/controlecaminhao/model/Truck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/matheus/controlecaminhao/ListTruck.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/matheus/controlecaminhao/ListTruck.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/matheus/controlecaminhao/RegisterTruck.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/matheus/controlecaminhao/RegisterTruck.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/matheus/controlecaminhao/dashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/matheus/controlecaminhao/dashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/matheus/controlecaminhao/registerExpenses.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/matheus/controlecaminhao/registerExpenses.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/matheus/controlecaminhao/style/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/matheus/controlecaminhao/style/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,20 +49,21 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Matheus/Documents/Projetos/atelierehartesbackend&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "/home/tardis/Documents/Projetos/ControleCaminhao",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Matheus\Documents\ControleCaminhao\src\main\resources\com\matheus\controlecaminhao\segundoestilo" />

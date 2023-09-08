@@ -24,8 +24,8 @@ Um sistema para controle de frotas de caminhões que demonstra a despesas mensai
 - [x] Fazer a tela de listar caminhões
 - [x] Fazer a tela de listar despesas dos caminhões
 - [x] Armazenar o caminhão no banco de dados(Tem bugs)
-- [ ] Armazenar as despesas do caminhão
-- [ ] Mostrar despesas semanais,mensais e total
+- [x] Armazenar as despesas do caminhão
+- [x] Mostrar despesas semanais,mensais e total
 - [ ] fazer um grafico para despesas semanais e mensais
 
 ---

@@ -114,7 +114,7 @@ public class ListController implements Initializable {
 
     @FXML
     void RegisterTruck(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("registerTruck.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("RegisterTruck.fxml"));
 
         root = fxmlLoader.load();
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
