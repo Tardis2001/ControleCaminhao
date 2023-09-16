@@ -36,16 +36,7 @@ public class RegisterExpenseController implements Initializable {
 
     @FXML
     private TextField caminhaofield;
-    @FXML
-    void sendtoDashboard(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dashboard.fxml"));
 
-        root = fxmlLoader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
     @FXML
     private void ListTrucks(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ListTruck.fxml"));

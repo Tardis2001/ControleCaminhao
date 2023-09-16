@@ -1,22 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXDatePicker?>
+<?import io.github.palexdev.materialfx.controls.MFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@style/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.matheus.controlecaminhao.controller.DashboardController">
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;truckbackground.jpg&quot;);" BorderPane.alignment="CENTER" />
-   </center>
-   <top>
-      <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
+
+<StackPane fx:id="parentContainer" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.matheus.controlecaminhao.controller.DashboardController">
+   <children>
+      <AnchorPane fx:id="anchorRoot">
          <children>
-            <MFXButton fx:id="dashboard" buttonType="RAISED" computeRadiusMultiplier="false" depthLevel="LEVEL4" onMouseReleased="#sendtoDashboard" prefHeight="40.0" prefWidth="200.0" rippleAnimateBackground="false" style="-fx-background-radius: 0;" text="Painel" />
-            <MFXButton fx:id="listTrucks" buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#ListTrucks" prefHeight="40.0" prefWidth="200.0" style="-fx-background-radius: 0;" text="Caminhão" />
-            <MFXButton buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#RegisterTruck" prefHeight="40.0" prefWidth="200.0" style="-fx-background-radius: 0;" text="Registrar Caminhão" />
-            <MFXButton buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#RegisterExpenses" prefHeight="40.0" prefWidth="200.0" style="-fx-background-radius: 0;" text="Registrar Despesa" />
+            <BorderPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@style/style.css">
+               <center>
+                  <AnchorPane prefHeight="663.0" prefWidth="1514.0" style="-fx-background-image: url(&quot;truckbackground.jpg&quot;);" BorderPane.alignment="CENTER">
+                     <children>
+                        <VBox layoutX="46.0" layoutY="126.0" prefHeight="335.0" prefWidth="600.0" spacing="10.0">
+                           <children>
+                              <Label text="ID " textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField fx:id="idExpense" minHeight="30.0" prefHeight="30.0" prefWidth="931.0" promptText="Inserir apenas caso remova ou atualize" />
+                              <Label text="Nome" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField fx:id="ExpenseName" minHeight="30.0" prefHeight="30.0" prefWidth="622.0" />
+                              <Label text="Valor" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField fx:id="ExpenseAmount" minHeight="30.0" prefHeight="30.0" prefWidth="684.0" />
+                              <Label text="Data" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <MFXDatePicker fx:id="DateExpense" prefHeight="24.0" prefWidth="604.0" />
+                              <Label text="Id Caminhao" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField fx:id="IdTruckExpense" minHeight="30.0" prefHeight="30.0" prefWidth="853.0" />
+                           </children>
+                        </VBox>
+                        <Label layoutX="46.0" layoutY="-7.0" text="Despesas do Caminhão" textFill="WHITE">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="683.0" layoutY="15.0" orientation="VERTICAL" prefHeight="539.0" prefWidth="33.0" />
+                        <Label layoutX="728.0" layoutY="-7.0" text="Caminhão" textFill="WHITE">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                        <VBox layoutX="737.0" layoutY="66.0" prefHeight="252.0" prefWidth="600.0" spacing="5.0">
+                           <children>
+                              <Label text="ID " textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField minHeight="30.0" prefHeight="30.0" prefWidth="931.0" promptText="Inserir apenas caso remova ou atualize" />
+                              <Label text="Motorista" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField minHeight="30.0" prefHeight="30.0" prefWidth="622.0" />
+                              <Label text="Placa" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField minHeight="30.0" prefHeight="30.0" prefWidth="684.0" />
+                              <Label text="Marca" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField minHeight="30.0" prefHeight="30.0" prefWidth="630.0" />
+                              <Label text="Modelo" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField minHeight="30.0" prefHeight="30.0" prefWidth="600.0" />
+                              <Label text="Ano" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField minHeight="30.0" prefHeight="30.0" prefWidth="600.0" />
+                              <Label text="Km" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="20.0" />
+                                 </font>
+                              </Label>
+                              <MFXTextField minHeight="30.0" prefHeight="30.0" prefWidth="600.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </center>
+               <top>
+                  <AnchorPane prefHeight="186.0" prefWidth="1379.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" nodeOrientation="LEFT_TO_RIGHT" prefHeight="90.0" prefWidth="1296.0" spacing="30.0">
+                           <children>
+                              <MFXButton fx:id="listTrucks" buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#ListTrucks" prefHeight="40.0" prefWidth="200.0" style="-fx-background-radius: 0;" text="Caminhões/Despesas" />
+                              <MFXButton buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#RegisterExpenses" prefHeight="40.0" prefWidth="200.0" style="-fx-background-radius: 0;" text="Registrar Despesa" />
+                              <MFXButton buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#RemoverExpense" prefHeight="40.0" prefWidth="200.0" style="-fx-background-radius: 0;" text="Remover Despesa">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </MFXButton>
+                              <MFXButton fx:id="listTrucks1" buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#ListTrucks" prefHeight="40.0" prefWidth="200.0" style="-fx-background-radius: 0;" text="Atualizar Despesa" />
+                              <MFXButton buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#Backup" prefHeight="40.0" prefWidth="196.0" style="-fx-background-radius: 0;" text="Backup">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </MFXButton>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="316.0" layoutY="90.0" prefHeight="61.0" prefWidth="900.0" spacing="30.0">
+                           <children>
+                              <MFXButton buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#RegisterTruck" prefHeight="40.0" prefWidth="200.0" style="-fx-background-radius: 0;" text="Registrar Caminhão" />
+                              <MFXButton fx:id="listTrucks11" buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#ListTrucks" prefHeight="40.0" prefWidth="200.0" style="-fx-background-radius: 0;" text="Remover Caminhão" />
+                              <MFXButton fx:id="listTrucks12" buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#ListTrucks" prefHeight="40.0" prefWidth="200.0" style="-fx-background-radius: 0;" text="Atualizar Caminhão" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </top>
+            </BorderPane>
          </children>
-      </HBox>
-   </top>
-</BorderPane>
+      </AnchorPane>
+   </children>
+</StackPane>

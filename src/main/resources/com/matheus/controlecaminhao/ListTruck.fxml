@@ -8,66 +8,78 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@style/style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.matheus.controlecaminhao.controller.ListController">
-   <top>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0" BorderPane.alignment="CENTER">
+
+<StackPane fx:id="parentContainer" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.matheus.controlecaminhao.controller.ListController">
+   <children>
+      <AnchorPane fx:id="anchorRoot">
          <children>
-            <MFXButton buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#sendtoDashboard" prefHeight="40.0" prefWidth="200.0" text="Painel" />
-            <MFXButton fx:id="listTrucks" buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#ListTrucks" prefHeight="40.0" prefWidth="200.0" text="Caminhão" />
-            <MFXButton buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#RegisterTruck" prefHeight="40.0" prefWidth="200.0" text="Registrar Caminhão" />
-            <MFXButton buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#RegisterExpenses" prefHeight="40.0" prefWidth="200.0" text="Registrar Despesa" />
+            <BorderPane id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1366.0" stylesheets="@style/style.css">
+               <top>
+                  <AnchorPane BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="28.0" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+                           <children>
+                              <MFXButton fx:id="voltarbt" buttonType="RAISED" depthLevel="LEVEL4" onMouseReleased="#voltar" prefHeight="40.0" prefWidth="200.0" text="Voltar" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;truckbackground.jpg&quot;);" BorderPane.alignment="CENTER">
+                     <children>
+                        <MFXLegacyTableView fx:id="tablecaminhoes" layoutX="115.0" layoutY="39.0" prefHeight="545.0" prefWidth="493.0">
+                           <columns>
+                              <TableColumn fx:id="tableidcaminhao" prefWidth="51.0" text="ID" />
+                              <TableColumn fx:id="tablemodelo" prefWidth="99.0" text="Modelo" />
+                              <TableColumn fx:id="tableano" prefWidth="70.0" text="Ano" />
+                              <TableColumn fx:id="tableplaca" text="Placa" />
+                              <TableColumn fx:id="tablemotorista" prefWidth="134.0" text="Motorista" />
+                              <TableColumn fx:id="tablekm" prefWidth="58.0" text="Km" />
+                           </columns>
+                        </MFXLegacyTableView>
+                        <Label layoutX="115.0" layoutY="-11.0" text="Caminhões" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <MFXTextField fx:id="searchdespesas" floatMode="ABOVE" layoutX="711.0" layoutY="-11.0" prefHeight="29.0" prefWidth="523.0" promptText="Digite o ID aqui para filtrar" />
+                        <MFXLegacyTableView fx:id="tabledespesas" layoutX="711.0" layoutY="38.0" prefHeight="548.0" prefWidth="523.0">
+                           <columns>
+                              <TableColumn fx:id="tableid" prefWidth="52.0" text="Id" />
+                              <TableColumn fx:id="tableidCaminhao" prefWidth="89.0" text="ID Caminhão" />
+                              <TableColumn fx:id="tablenome" prefWidth="196.0" text="Nome" />
+                              <TableColumn fx:id="tablevalor" prefWidth="85.0" text="Valor" />
+                              <TableColumn fx:id="tabledata" prefWidth="100.0" text="Data" />
+                           </columns>
+                        </MFXLegacyTableView>
+                        <Label layoutX="657.0" layoutY="617.0" prefHeight="40.0" style="-fx-background-color: #1f1e1e; -fx-padding: 5px;" text="Diferença:" textFill="WHITE" />
+                        <Label fx:id="total" layoutX="730.0" layoutY="617.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #1f1e1e;" text="0.0" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="375.0" layoutY="617.0" prefHeight="40.0" style="-fx-background-color: #1f1e1e; -fx-padding: 5px;" text="Despesa Total da Semana:" textFill="WHITE" />
+                        <Label fx:id="despesaSemana" layoutX="546.0" layoutY="617.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #1f1e1e;" text="0.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="114.0" layoutY="617.0" prefHeight="40.0" style="-fx-background-color: #1f1e1e; -fx-padding: 5px;" text="Despesa Total do Mês:" textFill="WHITE" />
+                        <Label fx:id="despesaMes" layoutX="262.0" layoutY="617.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #1f1e1e;" text="0.0" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <MFXButton layoutX="1164.0" layoutY="617.0" onMouseClicked="#searchexpense" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: #1f1e1e;" text="Pesquisar" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
          </children>
-      </HBox>
-   </top>
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-image: url(&quot;truckbackground.jpg&quot;);" BorderPane.alignment="CENTER">
-         <children>
-            <MFXLegacyTableView fx:id="tablecaminhoes" layoutX="115.0" layoutY="39.0" prefHeight="545.0" prefWidth="493.0">
-               <columns>
-                  <TableColumn fx:id="tableidcaminhao" prefWidth="51.0" text="ID" />
-                  <TableColumn fx:id="tablemodelo" prefWidth="99.0" text="Modelo" />
-                  <TableColumn fx:id="tableano" prefWidth="70.0" text="Ano" />
-                  <TableColumn fx:id="tableplaca" text="Placa" />
-                  <TableColumn fx:id="tablemotorista" prefWidth="134.0" text="Motorista" />
-                  <TableColumn fx:id="tablekm" prefWidth="58.0" text="Km" />
-               </columns>
-            </MFXLegacyTableView>
-            <Label layoutX="115.0" layoutY="-11.0" text="Caminhões" textFill="WHITE">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <MFXTextField fx:id="searchdespesas" floatMode="ABOVE" layoutX="711.0" layoutY="-11.0" prefHeight="29.0" prefWidth="523.0" promptText="Digite o ID aqui para filtrar" />
-            <MFXLegacyTableView fx:id="tabledespesas" layoutX="711.0" layoutY="38.0" prefHeight="548.0" prefWidth="523.0">
-               <columns>
-                  <TableColumn fx:id="tableid" prefWidth="52.0" text="Id" />
-                  <TableColumn fx:id="tableidCaminhao" prefWidth="89.0" text="ID Caminhão" />
-                  <TableColumn fx:id="tablenome" prefWidth="196.0" text="Nome" />
-                  <TableColumn fx:id="tablevalor" prefWidth="85.0" text="Valor" />
-                  <TableColumn fx:id="tabledata" prefWidth="100.0" text="Data" />
-               </columns>
-            </MFXLegacyTableView>
-            <Label layoutX="648.0" layoutY="617.0" prefHeight="40.0" style="-fx-background-color: #1f1e1e; -fx-padding: 5px;" text="Diferença:" textFill="WHITE" />
-            <Label fx:id="total" layoutX="711.0" layoutY="617.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #1f1e1e;" text="0.0" textAlignment="RIGHT" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="361.0" layoutY="617.0" prefHeight="40.0" style="-fx-background-color: #1f1e1e; -fx-padding: 5px;" text="Despesa Total da Semana:" textFill="WHITE" />
-            <Label fx:id="despesaSemana" layoutX="510.0" layoutY="617.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #1f1e1e;" text="0.0" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="114.0" layoutY="617.0" prefHeight="40.0" style="-fx-background-color: #1f1e1e; -fx-padding: 5px;" text="Despesa Total do Mês:" textFill="WHITE" />
-            <Label fx:id="despesaMes" layoutX="244.0" layoutY="617.0" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #1f1e1e;" text="0.0" textFill="WHITE">
-               <font>
-                  <Font name="System Bold" size="18.0" />
-               </font>
-            </Label>
-            <MFXButton layoutX="1164.0" layoutY="617.0" onMouseClicked="#searchexpense" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: #1f1e1e;" text="Pesquisar" textFill="WHITE" />
-         </children></AnchorPane>
-   </center>
-</BorderPane>
+      </AnchorPane>
+   </children>
+</StackPane>

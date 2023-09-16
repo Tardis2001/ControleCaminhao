@@ -3,17 +3,20 @@ package com.matheus.controlecaminhao.controller;
 import com.matheus.controlecaminhao.Main;
 import com.matheus.controlecaminhao.model.Expenses;
 import com.matheus.controlecaminhao.model.Truck;
-import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXTextField;
 import io.github.palexdev.materialfx.controls.legacy.MFXLegacyTableView;
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -21,23 +24,17 @@ import javafx.scene.input.MouseEvent;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.Map;
 import java.util.ResourceBundle;
 
 import com.matheus.controlecaminhao.dao.truckdao;
 import com.matheus.controlecaminhao.dao.expensedao;
-import javafx.stage.Stage;
-
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.StackPane;
+import javafx.util.Duration;
 public class ListController implements Initializable {
 
-    private Stage stage;
-    private Scene scene;
-    private Parent root;
     @FXML
     private Label despesaMes;
-
-    @FXML
-    private MFXButton listTrucks;
 
     @FXML
     private MFXTextField searchdespesas;
@@ -89,49 +86,32 @@ public class ListController implements Initializable {
     private truckdao truckdao;
     private ObservableList<Expenses> expensesList = FXCollections.observableArrayList();
     private ObservableList<Truck> trucklist = FXCollections.observableArrayList();
-
     @FXML
-    void ListTrucks(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("ListTruck.fxml"));
-
-        root = fxmlLoader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
+    private AnchorPane anchorRoot;
     @FXML
-    void RegisterExpenses(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("registerExpenses.fxml"));
-
-        root = fxmlLoader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
+    private StackPane parentContainer;
     @FXML
-    void RegisterTruck(MouseEvent event) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("RegisterTruck.fxml"));
-
-        root = fxmlLoader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
+    private Button voltarbt;
     @FXML
-    void sendtoDashboard(MouseEvent event) throws IOException {
+    void voltar(MouseEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dashboard.fxml"));
 
-        root = fxmlLoader.load();
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        Parent paneToAdd = fxmlLoader.load();
+        Scene scene = voltarbt.getScene();
+        paneToAdd.translateXProperty().set(-scene.getWidth());
+        parentContainer.getChildren().add(paneToAdd);
+
+        //Create new TimeLine animation
+        Timeline timeline = new Timeline();
+        //Animate X property
+        KeyValue kv = new KeyValue(paneToAdd.translateXProperty(), 0, Interpolator.EASE_IN);
+        KeyFrame kf = new KeyFrame(Duration.millis(1000), kv);
+        timeline.getKeyFrames().add(kf);
+        //After completing animation, remove first scene
+        timeline.setOnFinished(t -> {
+            parentContainer.getChildren().remove(anchorRoot);
+        });
+        timeline.play();
     }
 
     @FXML
